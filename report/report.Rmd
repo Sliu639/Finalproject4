@@ -1,0 +1,36 @@
+---
+title: "Heart Disease — Final Project Report"
+author: "Shuyang Liu"
+date: "2025-11-06"
+output: html_document
+---
+
+# Introduction
+
+This report uses the UCI Heart Disease dataset to explore factors associated with heart disease.
+Specifically, I am aim to:
+
+1. Describe the dataset and its variables.
+2. Provide a descriptive table summarizing key variables overall and by disease status.
+3. Create figures to visualize distributions and relationships.
+4. Briefly interpret the table and figure.
+
+
+#Table
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(readr); library(here); library(knitr)
+tbl_num <- readr::read_csv(here::here("output","table_numeric_by_hd.csv"), show_col_types = FALSE)
+tbl_sex <- readr::read_csv(here::here("output","table_sex_by_hd.csv"), show_col_types = FALSE)
+knitr::kable(tbl_num, caption = "Numeric summaries by heart disease (mean/sd)")
+knitr::kable(tbl_sex, caption = "Sex distribution (%) by heart disease")
+```
+
+#Figure
+
+```{r, echo=FALSE}
+library(here); library(knitr)
+knitr::include_graphics(here::here("output","fig_chol_age_hd.png"))
+knitr::include_graphics(here::here("output","fig_bp_hd.png"))
+```
+

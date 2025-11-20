@@ -44,3 +44,10 @@ source("code/04_render_report.R")
 
 ## Notes
 - All paths use **`here::here()`**; each script prints its project root.
+
+
+## renv
+To ensure full reproducibility, this project uses the renv package to manage package versions. 
+If you clone or download this repository, you should synchronize your local R package library with the project’s renv.lock file. 
+This lockfile records the exact package versions used when the project was created. To restore the environment, simply run:
+renv::restore()

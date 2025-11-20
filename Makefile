@@ -16,3 +16,5 @@ output/clean_data.rds: data/processed.cleveland.data code/01_load_data.R
 
 clean:
 	rm -f output/*.rds output/*.csv output/*.png report/report.html
+install:
+	R -e 'renv::restore()'

@@ -51,3 +51,15 @@ To ensure full reproducibility, this project uses the renv package to manage pac
 If you clone or download this repository, you should synchronize your local R package library with the project’s renv.lock file. 
 This lockfile records the exact package versions used when the project was created. To restore the environment, simply run:
 renv::restore()
+
+## Docker image and automated report
+
+This project includes a Docker image that can be used to reproduce the full analysis and report.
+
+### Build the image locally
+
+From the project root (the folder containing `Dockerfile`):
+
+```bash
+docker build -t sliu639/heart_project:v1 .
+```

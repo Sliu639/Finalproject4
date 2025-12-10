@@ -18,3 +18,13 @@ clean:
 	rm -f output/*.rds output/*.csv output/*.png report/report.html
 install:
 	R -e 'renv::restore()'
+.PHONY: docker_report
+
+docker_report:
+	rm -f report/report.html
+	mkdir -p report
+	docker run --rm \
+	  -v "$$(pwd)/report":/heart_project/report \
+	  sliu639/heart_project:v1
+
+
